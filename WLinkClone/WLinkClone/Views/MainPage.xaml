@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="WLinkClone.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:material="clr-namespace:WLinkClone.Helpers"
+    xmlns:vm="clr-namespace:WLinkClone.ViewModels"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel />
+    </ContentPage.BindingContext>
+    <NavigationPage.TitleView>
+        <StackLayout
+            Padding="10,0,20,0"
+            Orientation="Horizontal"
+            Spacing="20">
+            <Label
+                FontSize="17"
+                HorizontalOptions="StartAndExpand"
+                Text="Home (sunitadevi_fbtmd)"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Label
+                xct:TouchEffect.NativeAnimation="True"
+                FontFamily="{StaticResource Material}"
+                FontSize="25"
+                Text="{x:Static material:MaterialIconHelper.BellOutline}"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Label
+                xct:TouchEffect.NativeAnimation="True"
+                FontFamily="{StaticResource Material}"
+                FontSize="25"
+                Text="{x:Static material:MaterialIconHelper.AccountOutline}"
+                TextColor="White"
+                VerticalOptions="Center" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+        <StackLayout>
+            <Grid VerticalOptions="Start">
+                <CarouselView
+                    Margin="0,20"
+                    HeightRequest="230"
+                    IndicatorView="IndicatorView"
+                    ItemsSource="{Binding Images}"
+                    Position="{Binding Position}"
+                    VerticalOptions="Start">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="30" Orientation="Horizontal" />
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame
+                                Padding="0"
+                                CornerRadius="10"
+                                IsClippedToBounds="True">
+                                <ff:CachedImage Aspect="AspectFill" Source="{Binding}" />
+                            </Frame>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <IndicatorView
+                    x:Name="IndicatorView"
+                    HorizontalOptions="Center"
+                    IndicatorColor="Gray"
+                    SelectedIndicatorColor="LightGray"
+                    VerticalOptions="End" />
+            </Grid>
+            <StackLayout Padding="20,0">
+                <Frame
+                    CornerRadius="10"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+                    <StackLayout>
+                        <Label FontFamily="{StaticResource PoppinsSemiBold}" Text="Wi-Fi Mobility" />
+                        <Label Text="Unlimited Internet Access" />
+                        <Label
+                            FontFamily="{StaticResource Material}"
+                            FontSize="Title"
+                            HorizontalOptions="End"
+                            Text="{x:Static material:MaterialIconHelper.MapMarker}"
+                            TextColor="{StaticResource Primary}" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
