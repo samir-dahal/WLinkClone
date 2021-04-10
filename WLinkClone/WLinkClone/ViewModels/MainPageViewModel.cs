@@ -17,8 +17,7 @@ namespace WLinkClone.ViewModels
         }
         public ObservableRangeCollection<string> Images { get; set; } = new ObservableRangeCollection<string>
         {
-            "https://picsum.photos/500/500", "https://picsum.photos/499/499", "https://picsum.photos/498/498",
-            "https://picsum.photos/497/497", "https://picsum.photos/496/496", "https://picsum.photos/495/495",
+            "https://bit.ly/3s1xTkV", "https://bit.ly/2PQGpq2", "https://bit.ly/3mC8nSw", "https://bit.ly/3t2oISG",
         };
         public MainPageViewModel()
         {

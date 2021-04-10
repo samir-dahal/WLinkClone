@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="WLinkClone.Views.Home.Widgets.BandWidthChangeWidget"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="clr-namespace:WLinkClone.Helpers">
+    <!--  BandWidth Change  -->
+    <Frame>
+        <StackLayout>
+            <Label FontSize="16" Text="BandWidth Change" />
+            <!--  Current Download Speed  -->
+            <Label Text="Current Download" />
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    FontFamily="{StaticResource Material}"
+                    Text="{x:Static material:MaterialIconHelper.ArrowDown}"
+                    TextColor="{StaticResource Primary}"
+                    VerticalOptions="Center" />
+                <Label Text="30Mbps" />
+            </StackLayout>
+            <!--  Current Upload Speed  -->
+            <Label Text="Current Upload" />
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    FontFamily="{StaticResource Material}"
+                    Text="{x:Static material:MaterialIconHelper.ArrowUp}"
+                    TextColor="#ffbd24"
+                    VerticalOptions="Center" />
+                <Label Text="20Mbps" />
+            </StackLayout>
+            <Label
+                FontFamily="{StaticResource Material}"
+                FontSize="30"
+                HorizontalOptions="End"
+                Text="{x:Static material:MaterialIconHelper.Speedometer}"
+                TextColor="{StaticResource Primary}" />
+        </StackLayout>
+    </Frame>
+</ContentView>

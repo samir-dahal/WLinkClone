@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="WLinkClone.Views.Home.Widgets.SafeNetWidget" xmlns:material="clr-namespace:WLinkClone.Helpers"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--  Safe Net  -->
+    <Frame>
+        <StackLayout>
+            <Label FontSize="16" Text="SafeNet" />
+            <Label Text="Safer internet for children" />
+            <Label
+                FontFamily="{StaticResource Material}"
+                FontSize="30"
+                HorizontalOptions="End"
+                Text="{x:Static material:MaterialIconHelper.ShieldCheck}"
+                TextColor="{StaticResource Primary}" />
+        </StackLayout>
+    </Frame>
+</ContentView>

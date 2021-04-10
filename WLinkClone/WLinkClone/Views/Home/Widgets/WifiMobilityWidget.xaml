@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="WLinkClone.Views.Home.Widgets.WifiMobilityWidget"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:material="clr-namespace:WLinkClone.Helpers"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--  Wi-Fi Mobility  -->
+    <Frame>
+        <StackLayout>
+            <Label FontSize="16" Text="Wi-Fi Mobility" />
+            <Label Text="Unlimited Internet Access" />
+            <Label
+                FontFamily="{StaticResource Material}"
+                FontSize="30"
+                HorizontalOptions="End"
+                Text="{x:Static material:MaterialIconHelper.MapMarker}"
+                TextColor="{StaticResource Primary}" />
+        </StackLayout>
+    </Frame>
+</ContentView>

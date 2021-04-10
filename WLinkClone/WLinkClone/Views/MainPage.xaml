@@ -6,6 +6,7 @@
     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:material="clr-namespace:WLinkClone.Helpers"
     xmlns:vm="clr-namespace:WLinkClone.ViewModels"
+    xmlns:widgets="clr-namespace:WLinkClone.Views.Home.Widgets"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <ContentPage.BindingContext>
         <vm:MainPageViewModel />
@@ -39,6 +40,7 @@
     </NavigationPage.TitleView>
     <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
         <StackLayout>
+            <!--  Carousel View  -->
             <Grid VerticalOptions="Start">
                 <CarouselView
                     Margin="0,20"
@@ -52,10 +54,7 @@
                     </CarouselView.ItemsLayout>
                     <CarouselView.ItemTemplate>
                         <DataTemplate>
-                            <Frame
-                                Padding="0"
-                                CornerRadius="10"
-                                IsClippedToBounds="True">
+                            <Frame Padding="0" IsClippedToBounds="True">
                                 <ff:CachedImage Aspect="AspectFill" Source="{Binding}" />
                             </Frame>
                         </DataTemplate>
@@ -68,22 +67,37 @@
                     SelectedIndicatorColor="LightGray"
                     VerticalOptions="End" />
             </Grid>
-            <StackLayout Padding="20,0">
-                <Frame
-                    CornerRadius="10"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Start">
-                    <StackLayout>
-                        <Label FontFamily="{StaticResource PoppinsSemiBold}" Text="Wi-Fi Mobility" />
-                        <Label Text="Unlimited Internet Access" />
-                        <Label
-                            FontFamily="{StaticResource Material}"
-                            FontSize="Title"
-                            HorizontalOptions="End"
-                            Text="{x:Static material:MaterialIconHelper.MapMarker}"
-                            TextColor="{StaticResource Primary}" />
-                    </StackLayout>
-                </Frame>
+            <!--  Home Screeen Widgets  -->
+            <StackLayout Padding="20,0" Spacing="10">
+                <StackLayout.Resources>
+                    <Style TargetType="Frame">
+                        <Setter Property="VerticalOptions" Value="Start" />
+                    </Style>
+                    <Style TargetType="Grid">
+                        <Setter Property="ColumnSpacing" Value="10" />
+                        <Setter Property="RowSpacing" Value="10" />
+                    </Style>
+                </StackLayout.Resources>
+                <Grid ColumnDefinitions="*, *">
+                    <widgets:RemainingDaysWidget />
+                    <widgets:RouterWidget Grid.Column="1" />
+                </Grid>
+                <Grid ColumnDefinitions="*, *">
+                    <widgets:WifiMobilityWidget />
+                    <widgets:ReferOfferWidget Grid.Column="1" />
+                </Grid>
+                <Grid ColumnDefinitions="*, *">
+                    <widgets:SafeNetWidget />
+                    <widgets:SpeedTestWidget Grid.Column="1" />
+                </Grid>
+                <Grid ColumnDefinitions="*, *">
+                    <widgets:HelpWidget />
+                    <widgets:CustomerLoginWidget Grid.Column="1" />
+                </Grid>
+                <Grid ColumnDefinitions="*, *">
+                    <widgets:BandWidthChangeWidget />
+                    <widgets:FupCountWidget Grid.Column="1" />
+                </Grid>
             </StackLayout>
         </StackLayout>
     </ScrollView>

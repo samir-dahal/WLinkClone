@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="WLinkClone.Views.Home.Widgets.ReferOfferWidget"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="clr-namespace:WLinkClone.Helpers">
+    <!--  Refer Offer  -->
+    <Frame>
+        <StackLayout>
+            <Label FontSize="16" Text="Refer Offer" />
+            <Label Text="Get 1 Month Free Internet + NETTV Prime" />
+            <Label
+                FontFamily="{StaticResource Material}"
+                FontSize="30"
+                HorizontalOptions="End"
+                Text="{x:Static material:MaterialIconHelper.AccountGroup}"
+                TextColor="{StaticResource Primary}" />
+        </StackLayout>
+    </Frame>
+</ContentView>

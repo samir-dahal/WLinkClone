@@ -23,7 +23,17 @@
         </Style>
         <!--  Global Frame Style  -->
         <Style TargetType="Frame">
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="CornerRadius" Value="10" />
             <Setter Property="HasShadow" Value="False" />
+        </Style>
+        <!--  Global Button Style  -->
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="{StaticResource PoppinsSemiBold}" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="HeightRequest" Value="40" />
+            <Setter Property="TextTransform" Value="None" />
         </Style>
     </Application.Resources>
 </Application>

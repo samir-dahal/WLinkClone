@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="WLinkClone.Views.Home.Widgets.RemainingDaysWidget" xmlns:material="clr-namespace:WLinkClone.Helpers"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--  Remaining Days  -->
+    <Frame>
+        <StackLayout>
+            <Label
+                FontSize="16"
+                HorizontalOptions="Center"
+                Text="Remaining Days" />
+            <Grid Margin="0,10">
+                <Ellipse
+                    HeightRequest="80"
+                    HorizontalOptions="Center"
+                    Stroke="#ff9800"
+                    StrokeThickness="7"
+                    WidthRequest="80" />
+                <Label
+                    FontFamily="{StaticResource PoppinsSemiBold}"
+                    FontSize="Title"
+                    HorizontalOptions="Center"
+                    Text="360"
+                    VerticalOptions="Center" />
+                <Label
+                    Margin="0,0,0,10"
+                    HorizontalOptions="Center"
+                    Text="Days"
+                    VerticalOptions="End" />
+            </Grid>
+            <Button
+                BackgroundColor="{StaticResource Primary}"
+                Text="Pay Advance"
+                TextColor="White" />
+        </StackLayout>
+    </Frame>
+</ContentView>

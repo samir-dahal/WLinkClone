@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="WLinkClone.Views.Home.Widgets.FupCountWidget"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="clr-namespace:WLinkClone.Helpers">
+    <!--  FUP Count  -->
+    <Frame>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    FontSize="16"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Fup Count" />
+                <Label
+                    FontFamily="{StaticResource Material}"
+                    FontSize="30"
+                    Text="{x:Static material:MaterialIconHelper.InformationOutline}"
+                    TextColor="{StaticResource Primary}" />
+            </StackLayout>
+            <Frame
+                Margin="0,0,0,3"
+                Padding="0"
+                BackgroundColor="#238f17"
+                CornerRadius="50">
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Label
+                        FontSize="16"
+                        Text="0"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                    <Label
+                        FontFamily="{StaticResource Material}"
+                        FontSize="20"
+                        Text="{x:Static material:MaterialIconHelper.FlagTriangle}"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                </StackLayout>
+            </Frame>
+            <Label Text="FUP hti count of 7 days" />
+        </StackLayout>
+    </Frame>
+</ContentView>
