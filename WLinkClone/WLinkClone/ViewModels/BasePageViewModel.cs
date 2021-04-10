@@ -56,6 +56,7 @@ namespace WLinkClone.ViewModels
         public override void Dispose()
         {
             FooterMenuItems.CollectionChanged -= FooterMenuItems_CollectionChanged;
+            App.CurrentFooterMenuType = default;
         }
     }
     public enum FooterMenuType

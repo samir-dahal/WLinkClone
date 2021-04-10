@@ -21,6 +21,7 @@
                 Text="Transactions"
                 TextColor="White" />
             <Label
+                xct:TouchEffect.Command="{Binding MoreTappedCommand}"
                 xct:TouchEffect.NativeAnimation="True"
                 FontFamily="{StaticResource Material}"
                 FontSize="20"
@@ -78,8 +79,8 @@
                                             <Label Text="Paid" />
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal" Spacing="80">
-                                            <Label Text="1834086" />
-                                            <Label Text="Rs. 0" />
+                                            <Label Text="{Binding Number}" />
+                                            <Label Text="{Binding PaidAmount, StringFormat='Rs. {0}'}" />
                                         </StackLayout>
                                     </StackLayout>
                                 </Grid>

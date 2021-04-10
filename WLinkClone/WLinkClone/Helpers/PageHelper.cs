@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,20 +10,40 @@ namespace WLinkClone.Helpers
 {
     public static class PageHelper
     {
+        public static Page CurrentPage => App.Current.MainPage;
+        public static INavigation Navigation => CurrentPage.Navigation;
+        public static IReadOnlyList<Page> NavigationStack => Navigation.NavigationStack;
+        public static IReadOnlyList<PopupPage> PopupNavigationStack => PopupNavigation.Instance.PopupStack;
         public static async Task SetMainPageAsync(Page page)
         {
-            //if(App.Current.MainPage.Navigation.NavigationStack.FirstOrDefault(p => p.GetType() == page.GetType()) is null)
-            //{
-            //    await App.Current.MainPage.Navigation.PushAsync(page, false);
-            //}
 
-
-            if (App.Current.MainPage.Navigation.NavigationStack.LastOrDefault(p => p.GetType() == page.GetType()) is not null) return;
-            await App.Current.MainPage.Navigation.PushAsync(page, false);
-            var firstPage = App.Current.MainPage.Navigation.NavigationStack.FirstOrDefault();
+            if (NavigationStack.LastOrDefault(p => p.GetType() == page.GetType()) is not null) return;
+            await Navigation.PushAsync(page, false);
+            var firstPage = NavigationStack.FirstOrDefault();
             if (firstPage is not null)
             {
-                App.Current.MainPage.Navigation.RemovePage(firstPage);
+                Navigation.RemovePage(firstPage);
+            }
+        }
+        public static async Task PushRgPageAsync(PopupPage page)
+        {
+            if(PopupNavigationStack.FirstOrDefault(p => p.GetType() == page.GetType()) is null)
+            {
+                await PopupNavigation.Instance.PushAsync(page);
+            }
+        }
+        public static async Task PopRgPageAsync()
+        {
+            if(PopupNavigationStack.Any())
+            {
+                await PopupNavigation.Instance.PopAsync();
+            }
+        }
+        public static async Task PopAllRgPagesAsync()
+        {
+            if (PopupNavigationStack.Any())
+            {
+                await PopupNavigation.Instance.PopAllAsync();
             }
         }
     }
