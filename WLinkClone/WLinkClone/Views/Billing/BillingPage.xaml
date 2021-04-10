@@ -29,24 +29,78 @@
                 VerticalOptions="Center" />
         </StackLayout>
     </NavigationPage.TitleView>
-    <Grid RowDefinitions="*, 55">
+    <Grid RowDefinitions="*, 55" RowSpacing="0">
         <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
-            <StackLayout
-                Padding="0,60"
-                BackgroundColor="{StaticResource Primary}"
-                VerticalOptions="Start">
+            <StackLayout>
+                <StackLayout
+                    Padding="0,60"
+                    BackgroundColor="{StaticResource Primary}"
+                    VerticalOptions="Start">
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="No Dues"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="You have no remaining dues."
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                </StackLayout>
                 <Label
-                    HorizontalOptions="Center"
-                    Text="No Dues"
-                    TextColor="White"
-                    VerticalOptions="Center" />
-                <Label
-                    HorizontalOptions="Center"
-                    Text="You have no remaining dues."
-                    TextColor="White"
-                    VerticalOptions="Center" />
+                    Padding="20,0"
+                    FontFamily="{StaticResource PoppinsSemiBold}"
+                    Text="Purchase History" />
+                <StackLayout
+                    Padding="20,0"
+                    BindableLayout.ItemsSource="{Binding Transactions}"
+                    Spacing="20">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Frame>
+                                <Grid ColumnDefinitions="auto, *" ColumnSpacing="20">
+                                    <StackLayout Grid.Column="0" VerticalOptions="Center">
+                                        <Label
+                                            FontFamily="{StaticResource PoppinsSemiBold}"
+                                            FontSize="Title"
+                                            HorizontalOptions="Center"
+                                            Text="23"
+                                            VerticalOptions="Center" />
+                                        <Label Text="Mar, 2021" />
+                                    </StackLayout>
+                                    <StackLayout
+                                        Grid.Column="1"
+                                        Spacing="0"
+                                        VerticalOptions="Center">
+                                        <Label Text="Online Payment" />
+                                        <StackLayout Orientation="Horizontal" Spacing="80">
+                                            <Label Text="Invoice" />
+                                            <Label Text="Paid" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" Spacing="80">
+                                            <Label Text="1834086" />
+                                            <Label Text="Rs. 0" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
         <custom:FooterTabView Grid.Row="1" />
+        <Button
+            BackgroundColor="#ff9800"
+            CornerRadius="50"
+            FontFamily="{StaticResource Material}"
+            FontSize="30"
+            HeightRequest="60"
+            HorizontalOptions="End"
+            Text="{x:Static material:MaterialIconHelper.Cart}"
+            TranslationX="-20"
+            TranslationY="-10"
+            VerticalOptions="End"
+            WidthRequest="60" />
     </Grid>
 </ContentPage>
