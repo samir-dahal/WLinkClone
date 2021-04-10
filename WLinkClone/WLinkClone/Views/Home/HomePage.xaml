@@ -3,6 +3,7 @@
     x:Class="WLinkClone.Views.Home.HomePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:custom="clr-namespace:WLinkClone.Views.Common"
     xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:material="clr-namespace:WLinkClone.Helpers"
     xmlns:vm="clr-namespace:WLinkClone.ViewModels.Home"
@@ -38,75 +39,84 @@
                 VerticalOptions="Center" />
         </StackLayout>
     </NavigationPage.TitleView>
-    <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
-        <StackLayout>
-            <!--  Carousel View  -->
-            <Grid VerticalOptions="Start">
-                <CarouselView
-                    Margin="0,20"
-                    HeightRequest="210"
-                    IndicatorView="IndicatorView"
-                    ItemsSource="{Binding Images}"
-                    Position="{Binding Position}"
-                    VerticalOptions="Start">
-                    <CarouselView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="30" Orientation="Horizontal" />
-                    </CarouselView.ItemsLayout>
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <Frame Padding="0" IsClippedToBounds="True">
-                                <Grid>
-                                    <ff:CachedImage Aspect="AspectFill" Source="{Binding}" />
-                                    <BoxView Opacity=".1" Color="Black" />
-                                </Grid>
-                            </Frame>
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
-                <IndicatorView
-                    x:Name="IndicatorView"
-                    Margin="0,0,0,30"
-                    HorizontalOptions="Center"
-                    IndicatorColor="LightGray"
-                    SelectedIndicatorColor="White"
-                    VerticalOptions="End" />
-            </Grid>
-            <!--  Home Screeen Widgets  -->
-            <StackLayout Padding="20,0" Spacing="10">
-                <StackLayout.Resources>
-                    <Style TargetType="Frame">
-                        <Setter Property="VerticalOptions" Value="Start" />
-                    </Style>
-                    <Style TargetType="Grid">
-                        <Setter Property="ColumnSpacing" Value="10" />
-                        <Setter Property="RowSpacing" Value="10" />
-                    </Style>
-                </StackLayout.Resources>
-                <Grid ColumnDefinitions="*, *">
-                    <widgets:RemainingDaysWidget />
-                    <widgets:RouterWidget Grid.Column="1" />
+    <Grid
+        ColumnSpacing="0"
+        RowDefinitions="*, 55"
+        RowSpacing="0">
+        <ScrollView
+            Grid.Row="0"
+            HorizontalScrollBarVisibility="Never"
+            VerticalScrollBarVisibility="Never">
+            <StackLayout>
+                <!--  Carousel View  -->
+                <Grid VerticalOptions="Start">
+                    <CarouselView
+                        Margin="0,20"
+                        HeightRequest="210"
+                        IndicatorView="IndicatorView"
+                        ItemsSource="{Binding Images}"
+                        Position="{Binding Position}"
+                        VerticalOptions="Start">
+                        <CarouselView.ItemsLayout>
+                            <LinearItemsLayout ItemSpacing="30" Orientation="Horizontal" />
+                        </CarouselView.ItemsLayout>
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Padding="0" IsClippedToBounds="True">
+                                    <Grid>
+                                        <ff:CachedImage Aspect="AspectFill" Source="{Binding}" />
+                                        <BoxView Opacity=".1" Color="Black" />
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <IndicatorView
+                        x:Name="IndicatorView"
+                        Margin="0,0,0,30"
+                        HorizontalOptions="Center"
+                        IndicatorColor="LightGray"
+                        SelectedIndicatorColor="White"
+                        VerticalOptions="End" />
                 </Grid>
-                <Grid ColumnDefinitions="*, *">
-                    <widgets:WifiMobilityWidget />
-                    <widgets:ReferOfferWidget Grid.Column="1" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *">
-                    <widgets:SafeNetWidget />
-                    <widgets:SpeedTestWidget Grid.Column="1" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *">
-                    <widgets:HelpWidget />
-                    <widgets:CustomerLoginWidget Grid.Column="1" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *">
-                    <widgets:BandWidthChangeWidget />
-                    <widgets:FupCountWidget Grid.Column="1" />
-                </Grid>
-                <Grid ColumnDefinitions="*, *">
-                    <widgets:NetTvSubscriptionWidget />
-                    <widgets:InternetSubscriptionWidget Grid.Column="1" />
-                </Grid>
+                <!--  Home Screeen Widgets  -->
+                <StackLayout Padding="20,0" Spacing="10">
+                    <StackLayout.Resources>
+                        <Style TargetType="Frame">
+                            <Setter Property="VerticalOptions" Value="Start" />
+                        </Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="ColumnSpacing" Value="10" />
+                            <Setter Property="RowSpacing" Value="10" />
+                        </Style>
+                    </StackLayout.Resources>
+                    <Grid ColumnDefinitions="*, *">
+                        <widgets:RemainingDaysWidget />
+                        <widgets:RouterWidget Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="*, *">
+                        <widgets:WifiMobilityWidget />
+                        <widgets:ReferOfferWidget Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="*, *">
+                        <widgets:SafeNetWidget />
+                        <widgets:SpeedTestWidget Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="*, *">
+                        <widgets:HelpWidget />
+                        <widgets:CustomerLoginWidget Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="*, *">
+                        <widgets:BandWidthChangeWidget />
+                        <widgets:FupCountWidget Grid.Column="1" />
+                    </Grid>
+                    <Grid ColumnDefinitions="*, *">
+                        <widgets:NetTvSubscriptionWidget />
+                        <widgets:InternetSubscriptionWidget Grid.Column="1" />
+                    </Grid>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
-    </ScrollView>
+        </ScrollView>
+        <custom:FooterTabView Grid.Row="1" />
+    </Grid>
 </ContentPage>

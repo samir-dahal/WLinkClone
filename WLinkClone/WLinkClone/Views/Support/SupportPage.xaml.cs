@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WLinkClone.ViewModels.Home;
+using WLinkClone.ViewModels.Support;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace WLinkClone.Views.Home
+namespace WLinkClone.Views.Support
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class SupportPage : ContentPage
     {
-        public HomePage()
+        public SupportPage()
         {
             InitializeComponent();
         }
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            if(BindingContext is HomePageViewModel homePageViewModel)
+            if(BindingContext is SupportPageViewModel supportPageViewModel)
             {
-                homePageViewModel?.Dispose();
+                supportPageViewModel?.Dispose();
             }
         }
     }

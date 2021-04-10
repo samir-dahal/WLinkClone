@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace WLinkClone.ViewModels.Home
 {
-    public class HomePageViewModel : ObservableBase
+    public class HomePageViewModel : BasePageViewModel
     {
         private int _position;
 
@@ -21,11 +21,11 @@ namespace WLinkClone.ViewModels.Home
         };
         public HomePageViewModel()
         {
-            Device.StartTimer(TimeSpan.FromSeconds(new Random().Next(2, 5)), (Func<bool>)(() =>
+            Device.StartTimer(TimeSpan.FromSeconds(new Random().Next(2, 5)), () =>
             {
                 Position = (Position + 1) % Images.Count;
                 return true;
-            }));
+            });
         }
     }
 }

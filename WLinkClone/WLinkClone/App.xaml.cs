@@ -1,4 +1,5 @@
 ﻿using System;
+using WLinkClone.ViewModels;
 using WLinkClone.Views;
 using WLinkClone.Views.Home;
 using Xamarin.Forms;
@@ -10,6 +11,8 @@ namespace WLinkClone
 {
     public partial class App : Application
     {
+        public static Xamarin.Forms.Color SelectedTabColor = Color.FromHex("303f9f");
+        public static FooterMenuType CurrentFooterMenuType;
         public App()
         {
             InitializeComponent();

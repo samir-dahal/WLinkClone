@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="WLinkClone.Views.Common.FooterTabView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <FlexLayout
+        x:Name="FlexLayout"
+        BackgroundColor="White"
+        BindableLayout.ItemsSource="{Binding FooterMenuItems}"
+        Wrap="NoWrap">
+        <BindableLayout.ItemTemplate>
+            <DataTemplate>
+                <StackLayout
+                    Padding="3"
+                    xct:TouchEffect.Command="{Binding FooterMenuTappedCommand}"
+                    xct:TouchEffect.CommandParameter="{Binding}"
+                    xct:TouchEffect.NativeAnimation="True"
+                    Spacing="0"
+                    WidthRequest="{Binding Source={x:Reference FlexLayout}, Path=Width}">
+                    <Label
+                        FontFamily="{StaticResource Material}"
+                        FontSize="Title"
+                        HorizontalOptions="Center"
+                        Text="{Binding Icon}"
+                        TextColor="{Binding SelectedColor}" />
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="{Binding Name}"
+                        TextColor="{Binding SelectedColor}" />
+                </StackLayout>
+            </DataTemplate>
+        </BindableLayout.ItemTemplate>
+    </FlexLayout>
+</ContentView>

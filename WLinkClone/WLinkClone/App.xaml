@@ -17,6 +17,10 @@
             <Setter Property="NavigationPage.BarBackgroundColor" Value="{StaticResource Primary}" />
             <Setter Property="NavigationPage.BarTextColor" Value="White" />
         </Style>
+        <!--  Global Content Page Style  -->
+        <Style TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+        </Style>
         <!--  Global Label Style  -->
         <Style TargetType="Label">
             <Setter Property="FontFamily" Value="{StaticResource PoppinsRegular}" />
