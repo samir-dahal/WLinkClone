@@ -4,7 +4,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:custom="clr-namespace:WLinkClone.Views.Common"
-    xmlns:vm="clr-namespace:WLinkClone.ViewModels.Support">
+    xmlns:material="clr-namespace:WLinkClone.Helpers"
+    xmlns:vm="clr-namespace:WLinkClone.ViewModels.Support"
+    xmlns:widgets="clr-namespace:WLinkClone.Views.Support.Widgets">
     <NavigationPage.TitleView>
         <Label
             FontSize="17"
@@ -15,6 +17,23 @@
         <vm:SupportPageViewModel />
     </ContentPage.BindingContext>
     <Grid RowDefinitions="*, 55">
+        <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+            <StackLayout Padding="20,10" Spacing="10">
+                <widgets:HavingProblemWidget />
+                <Grid
+                    ColumnDefinitions="*, *"
+                    ColumnSpacing="10"
+                    RowDefinitions="auto, auto, auto"
+                    RowSpacing="10">
+                    <widgets:ReportProblemWidget Grid.Row="0" Grid.Column="0" />
+                    <widgets:WriteEmailWidget Grid.Row="0" Grid.Column="1" />
+                    <widgets:MakeCallWidget Grid.Row="1" Grid.Column="0" />
+                    <widgets:TicketWidget Grid.Row="1" Grid.Column="1" />
+                    <widgets:HelpYourselfWidget Grid.Row="2" Grid.Column="0" />
+                    <widgets:TutorialWidget Grid.Row="2" Grid.Column="1" />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
         <custom:FooterTabView Grid.Row="1" />
     </Grid>
 </ContentPage>

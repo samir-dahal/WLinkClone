@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="WLinkClone.Views.Support.Widgets.HavingProblemWidget"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="clr-namespace:WLinkClone.Helpers">
+    <Frame>
+        <StackLayout Spacing="0">
+            <Grid Margin="0,10">
+                <Ellipse
+                    Fill="#e7eaff"
+                    HeightRequest="80"
+                    HorizontalOptions="Center"
+                    WidthRequest="80" />
+                <Label
+                    FontFamily="{StaticResource Material}"
+                    FontSize="40"
+                    HorizontalOptions="Center"
+                    Text="{x:Static material:MaterialIconHelper.Ticket}"
+                    TextColor="{StaticResource Primary}"
+                    VerticalOptions="Center" />
+            </Grid>
+            <Label HorizontalOptions="Center" Text="Having Problem?" />
+            <Label HorizontalOptions="Center" Text="You are just a click away from a solution!" />
+            <Label
+                FontFamily="{StaticResource PoppinsSemiBold}"
+                HorizontalOptions="Center"
+                Text="We are at your service 24 hours 365 days!" />
+        </StackLayout>
+    </Frame>
+</ContentView>

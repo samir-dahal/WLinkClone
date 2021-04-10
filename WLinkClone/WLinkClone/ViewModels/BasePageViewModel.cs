@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using WLinkClone.Helpers;
+using WLinkClone.Views.Billing;
 using WLinkClone.Views.Home;
 using WLinkClone.Views.Support;
 using Xamarin.CommunityToolkit.ObjectModel;
@@ -32,7 +33,7 @@ namespace WLinkClone.ViewModels
                 Type = FooterMenuType.Support,
                 Icon = MaterialIconHelper.Headphones,
             });
-            items.Add(new FooterMenu
+            items.Add(new FooterMenu(async () => await PageHelper.SetMainPageAsync(new BillingPage()))
             {
                 Name = "Billing",
                 Type = FooterMenuType.Billing,

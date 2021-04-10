@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="WLinkClone.Views.Support.Widgets.ReportProblemWidget"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="clr-namespace:WLinkClone.Helpers">
+    <Frame>
+        <StackLayout>
+            <Grid>
+                <Ellipse
+                    Fill="#e7eaff"
+                    HeightRequest="60"
+                    HorizontalOptions="Center"
+                    WidthRequest="60" />
+                <Label
+                    FontFamily="{StaticResource Material}"
+                    FontSize="40"
+                    HorizontalOptions="Center"
+                    Text="{x:Static material:MaterialIconHelper.Ticket}"
+                    TextColor="{StaticResource Primary}"
+                    VerticalOptions="Center" />
+            </Grid>
+            <Label HorizontalOptions="Center" Text="Report your Problem" />
+        </StackLayout>
+    </Frame>
+</ContentView>

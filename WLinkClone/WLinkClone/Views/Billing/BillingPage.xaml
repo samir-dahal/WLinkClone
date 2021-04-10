@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="WLinkClone.Views.Billing.BillingPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:custom="clr-namespace:WLinkClone.Views.Common"
+    xmlns:material="clr-namespace:WLinkClone.Helpers"
+    xmlns:vm="clr-namespace:WLinkClone.ViewModels.Billing"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <ContentPage.BindingContext>
+        <vm:BillingPageViewModel />
+    </ContentPage.BindingContext>
+    <NavigationPage.TitleView>
+        <StackLayout
+            Padding="0,0,20,0"
+            BackgroundColor="{StaticResource Primary}"
+            Orientation="Horizontal">
+            <Label
+                FontSize="17"
+                HorizontalOptions="StartAndExpand"
+                Text="Transactions"
+                TextColor="White" />
+            <Label
+                xct:TouchEffect.NativeAnimation="True"
+                FontFamily="{StaticResource Material}"
+                FontSize="20"
+                Text="{x:Static material:MaterialIconHelper.DotsVertical}"
+                TextColor="White"
+                VerticalOptions="Center" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <Grid RowDefinitions="*, 55">
+        <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
+            <StackLayout
+                Padding="0,60"
+                BackgroundColor="{StaticResource Primary}"
+                VerticalOptions="Start">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="No Dues"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+                <Label
+                    HorizontalOptions="Center"
+                    Text="You have no remaining dues."
+                    TextColor="White"
+                    VerticalOptions="Center" />
+            </StackLayout>
+        </ScrollView>
+        <custom:FooterTabView Grid.Row="1" />
+    </Grid>
+</ContentPage>
