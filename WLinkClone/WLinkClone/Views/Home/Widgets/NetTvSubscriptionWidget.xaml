@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="WLinkClone.Views.Home.Widgets.NetTvSubscriptionWidget"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--  NETTV Subscription  -->
+    <Frame>
+        <StackLayout>
+            <Label FontSize="16" Text="NETTV Subscription" />
+            <Label Text="NETTV Standard Package - 1 Day - RESELLER" />
+            <Grid>
+                <Ellipse
+                    HeightRequest="80"
+                    HorizontalOptions="Center"
+                    Stroke="#ff9800"
+                    StrokeThickness="2"
+                    WidthRequest="80" />
+                <Label
+                    FontSize="Title"
+                    HorizontalOptions="Center"
+                    Text="23"
+                    VerticalOptions="Center" />
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#ff9800"
+                    CornerRadius="50"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    WidthRequest="80">
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="Apr, 2021"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                </Frame>
+            </Grid>
+            <Label HorizontalOptions="Center" Text="Expiry Date" />
+            <Button
+                Margin="0,10,0,0"
+                BackgroundColor="{StaticResource Primary}"
+                Text="Install NETTV App"
+                TextColor="White" />
+        </StackLayout>
+    </Frame>
+</ContentView>

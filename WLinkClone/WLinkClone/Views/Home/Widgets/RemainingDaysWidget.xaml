@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentView
-    x:Class="WLinkClone.Views.Home.Widgets.RemainingDaysWidget" xmlns:material="clr-namespace:WLinkClone.Helpers"
+    x:Class="WLinkClone.Views.Home.Widgets.RemainingDaysWidget"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="clr-namespace:WLinkClone.Helpers">
     <!--  Remaining Days  -->
     <Frame>
         <StackLayout>
@@ -21,7 +22,7 @@
                     FontFamily="{StaticResource PoppinsSemiBold}"
                     FontSize="Title"
                     HorizontalOptions="Center"
-                    Text="360"
+                    Text="365"
                     VerticalOptions="Center" />
                 <Label
                     Margin="0,0,0,10"

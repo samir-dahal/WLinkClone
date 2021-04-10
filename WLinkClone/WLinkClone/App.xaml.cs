@@ -1,5 +1,6 @@
 ﻿using System;
 using WLinkClone.Views;
+using WLinkClone.Views.Home;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 [assembly: ExportFont("materialdesignicons.ttf", Alias = "Material")]
@@ -13,7 +14,7 @@ namespace WLinkClone
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new HomePage());
         }
 
         protected override void OnStart()

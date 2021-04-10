@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="WLinkClone.Views.Home.Widgets.InternetSubscriptionWidget"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--  Internet Subscription  -->
+    <Frame>
+        <StackLayout Spacing="10">
+            <Label FontSize="16" Text="Internet Subscription" />
+            <Label Text="Fiber Unlimited IV" />
+            <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                <StackLayout>
+                    <Grid>
+                        <Ellipse
+                            HeightRequest="80"
+                            HorizontalOptions="Center"
+                            Stroke="#238f17"
+                            StrokeThickness="2"
+                            WidthRequest="80" />
+                        <Label
+                            FontSize="Title"
+                            HorizontalOptions="Center"
+                            Text="22"
+                            VerticalOptions="Center" />
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="#238f17"
+                            CornerRadius="50"
+                            HorizontalOptions="Center"
+                            VerticalOptions="End"
+                            WidthRequest="80">
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="Mar, 2021"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </Frame>
+                    </Grid>
+                    <Label HorizontalOptions="Center" Text="Renew Date" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout>
+                    <Grid>
+                        <Ellipse
+                            HeightRequest="80"
+                            HorizontalOptions="Center"
+                            Stroke="#ffbd24"
+                            StrokeThickness="2"
+                            WidthRequest="80" />
+                        <Label
+                            FontSize="Title"
+                            HorizontalOptions="Center"
+                            Text="23"
+                            VerticalOptions="Center" />
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="#ffbd24"
+                            CornerRadius="50"
+                            HorizontalOptions="Center"
+                            VerticalOptions="End"
+                            WidthRequest="80">
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="Apr, 2021"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </Frame>
+                    </Grid>
+                    <Label HorizontalOptions="Center" Text="Expiry Date" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                <StackLayout>
+                    <Grid>
+                        <Ellipse
+                            HeightRequest="80"
+                            HorizontalOptions="Center"
+                            Stroke="#303f9f"
+                            StrokeThickness="2"
+                            WidthRequest="80" />
+                        <Label
+                            FontSize="Title"
+                            HorizontalOptions="Center"
+                            Text="30"
+                            VerticalOptions="Center" />
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="#303f9f"
+                            CornerRadius="50"
+                            HorizontalOptions="Center"
+                            VerticalOptions="End"
+                            WidthRequest="80">
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="Mbps"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </Frame>
+                    </Grid>
+                    <Label HorizontalOptions="Center" Text="Download" />
+                </StackLayout>
+                <StackLayout>
+                    <Grid>
+                        <Ellipse
+                            HeightRequest="80"
+                            HorizontalOptions="Center"
+                            Stroke="#303f9f"
+                            StrokeThickness="2"
+                            WidthRequest="80" />
+                        <Label
+                            FontSize="Title"
+                            HorizontalOptions="Center"
+                            Text="20"
+                            VerticalOptions="Center" />
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="#303f9f"
+                            CornerRadius="50"
+                            HorizontalOptions="Center"
+                            VerticalOptions="End"
+                            WidthRequest="80">
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="Mbps"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </Frame>
+                    </Grid>
+                    <Label HorizontalOptions="Center" Text="Upload" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</ContentView>
